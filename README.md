@@ -1,6 +1,7 @@
-# Denali Typescript
+# denali-typescript
 
-An awesome addon built on the Denali framework.
+Build your Denali app using Typescript! Just `$ denali install denali-typescript`
+and you're good to go!
 
 
 ## Developing
