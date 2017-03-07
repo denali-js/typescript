@@ -1,6 +1,6 @@
-import { Blueprint } from 'denali-cli';
+const { Blueprint } = require('denali-cli');
 
-export default class DenaliTypescriptBlueprint extends Blueprint {
+module.exports = class DenaliTypescriptBlueprint extends Blueprint {
 
   static blueprintName = 'denali-typescript';
   static description = 'Installs denali-typescript';

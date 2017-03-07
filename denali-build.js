@@ -1,11 +1,11 @@
 const path = require('path');
 const { Builder, ui } = require(`denali-cli`);
 const { exec } = require('child_process');
-const resolve = require('resolve');
+const { sync: resolveSync } = require('resolve');
 
 module.exports = class DenaliBuilder extends Builder {
 
-  processSelf(tree, dir) {
+  processParent(tree, dir) {
     tree = this.transpileTree(tree, dir);
     return tree;
   }
@@ -20,8 +20,8 @@ module.exports = class DenaliBuilder extends Builder {
       }
       build() {
         return new Promise((resolve, reject) => {
-          let tscPath = resolve.sync('typescript', { cwd: __dirname });
-          exec(path.join(process.cwd(), 'node_modules/.bin/tsc') + ' --outDir ' + this.outputPath, {
+          let tscPath = resolveSync('typescript', { cwd: __dirname });
+          exec(path.join(tscPath, '..', '..', 'bin', 'tsc') + ' --outDir ' + this.outputPath, {
             cwd: this.inputPaths[0],
             stdio: 'inherit'
           }, (err, stdout, stderr) => {
