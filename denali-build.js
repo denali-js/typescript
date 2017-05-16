@@ -5,6 +5,11 @@ const { sync: resolveSync } = require('resolve');
 
 module.exports = class DenaliBuilder extends Builder {
 
+  processSelf(tree, dir) {
+    tree = this.transpileTree(tree, dir);
+    return tree;
+  }
+
   processParent(tree, dir) {
     tree = this.transpileTree(tree, dir);
     return tree;
@@ -43,7 +48,7 @@ module.exports = class DenaliBuilder extends Builder {
     let withoutTS = new Funnel(tree, {
       exclude: [ '**/*.ts' ]
     });
-    return new MergeTree([ withoutTS, transpiled ], { overwrite: true, annotation: 'merge typescript outptu' });
+    return new MergeTree([ withoutTS, transpiled ], { overwrite: true, annotation: 'merge typescript output' });
   }
 
 };
