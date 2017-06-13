@@ -10,7 +10,7 @@ module.exports = class DenaliBuilder extends Builder {
     return tree;
   }
 
-  transpileTree(tree) {
+  transpileTree(tree, dir) {
     const Funnel = require('broccoli-funnel');
     const MergeTree = require('broccoli-merge-trees');
     const Plugin = require('broccoli-plugin');
@@ -21,7 +21,7 @@ module.exports = class DenaliBuilder extends Builder {
       build() {
         return new Promise((resolve, reject) => {
           let tscPath = resolveSync('typescript', { cwd: __dirname });
-          exec(path.join(tscPath, '..', '..', 'bin', 'tsc') + ' --outDir ' + this.outputPath, {
+          exec(path.join(tscPath, '..', '..', 'bin', 'tsc') + ' --rootDir ' + dir + ' --outDir ' + this.outputPath, {
             cwd: this.inputPaths[0],
             stdio: 'inherit'
           }, (err, stdout, stderr) => {
