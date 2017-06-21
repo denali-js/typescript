@@ -1,6 +1,6 @@
 import { unlinkSync, renameSync } from 'fs';
 import * as glob from 'glob';
-import { Blueprint } from 'denali-cli';
+import { Blueprint, ui } from 'denali-cli';
 import * as createDebug from 'debug';
 
 const debug = createDebug('denali-typescript');
@@ -27,9 +27,11 @@ export default class DenaliTypescriptBlueprint extends Blueprint {
     glob.sync('{app,config,test}/**/*.js').forEach((filepath) => {
       renameSync(filepath, filepath.replace(/\.js$/, '.ts'));
     });
-    debug('uninstalling babel and eslint specific packages');
+    ui.info('Removing babel and eslint specific packages ...');
     this.uninstallPackages([
       'babel-eslint',
+      'babel-preset-es2015',
+      'babel-register',
       'babel-plugin-syntax-async-functions',
       'babel-plugin-syntax-trailing-function-commas',
       'babel-plugin-transform-async-to-generator',
@@ -44,9 +46,10 @@ export default class DenaliTypescriptBlueprint extends Blueprint {
       'babel-plugin-transform-runtime',
       'denali-babel',
       'denali-eslint',
+      'eslint',
       'eslint-config-denali'
     ]);
-    debug('installing typescript and tslint');
+    ui.info('installing typescript and tslint ...');
     this.installPackages([ 'typescript', 'tslint' ]);
   }
 }
