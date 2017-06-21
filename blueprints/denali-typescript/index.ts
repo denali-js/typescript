@@ -17,7 +17,11 @@ export default class DenaliTypescriptBlueprint extends Blueprint {
       '.eslintrc',
       'test/.eslintrc'
     ].forEach((filepath) => {
-      unlinkSync(filepath);
+      try {
+        unlinkSync(filepath);
+      } catch (e) {
+        // ignore if the file doesn't exist
+      }
     });
     debug('renaming .js -> .ts');
     glob.sync('{app,config,test}/**/*.js').forEach((filepath) => {
