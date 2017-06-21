@@ -1,7 +1,6 @@
 const path = require('path');
 const { Builder, ui } = require(`denali-cli`);
-const { exec } = require('child_process');
-const { sync: resolveSync } = require('resolve');
+const { typescript: Typescript } = require('broccoli-typescript-compiler');
 
 module.exports = class DenaliBuilder extends Builder {
 
@@ -16,39 +15,14 @@ module.exports = class DenaliBuilder extends Builder {
   }
 
   transpileTree(tree, dir) {
-    const Funnel = require('broccoli-funnel');
-    const MergeTree = require('broccoli-merge-trees');
-    const Plugin = require('broccoli-plugin');
-    class TypescriptTree extends Plugin {
-      constructor(tree, options) {
-        return super([tree], options);
-      }
-      build() {
-        return new Promise((resolve, reject) => {
-          let tscPath = resolveSync('typescript', { cwd: __dirname });
-          exec(path.join(tscPath, '..', '..', 'bin', 'tsc') + ' --rootDir ' + dir + ' --outDir ' + this.outputPath, {
-            cwd: this.inputPaths[0],
-            stdio: 'inherit'
-          }, (err, stdout, stderr) => {
-            if (err) {
-              if (stdout.match(/error TS\d+/)) {
-                ui.warn(`\n===> ${ stdout.split('\n').length } Typescript Errors:`);
-                ui.warn(stdout.replace(/^\.\.\/\.\.\//mg, ''));
-              } else {
-                return reject(err);
-              }
-            }
-            resolve();
-          });
-        });
-      }
-    }
-    let tsconfig = require(path.join(process.cwd(), 'tsconfig.json'));
-    let transpiled = new TypescriptTree(tree, { tsconfig });
+    let transpiledTS = new Typescript(tree, {
+      tsconfig: require(path.join(dir, 'tsconfig.json')),
+      annotation: 'compile typescript'
+    });
     let withoutTS = new Funnel(tree, {
       exclude: [ '**/*.ts' ]
     });
-    return new MergeTree([ withoutTS, transpiled ], { overwrite: true, annotation: 'merge typescript output' });
+    return new MergeTree([ withoutTS, transpiledTS ], { overwrite: true, annotation: 'merge typescript output' });
   }
 
 };
