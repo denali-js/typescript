@@ -7,13 +7,11 @@ const { typescript: Typescript } = require('broccoli-typescript-compiler');
 module.exports = class DenaliBuilder extends Builder {
 
   processSelf(tree, dir) {
-    tree = this.transpileTree(tree, dir);
-    return tree;
+    return this.transpileTree(tree, dir);
   }
 
   processParent(tree, dir) {
-    tree = this.transpileTree(tree, dir);
-    return tree;
+    return this.transpileTree(tree, dir);
   }
 
   transpileTree(tree, dir) {
