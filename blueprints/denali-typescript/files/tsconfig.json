@@ -13,5 +13,9 @@
       "skipLibCheck": true,
       "sourceRoot": "."
   },
-  "exclude": [ "blueprints/*/files/**" ]
+  "exclude": [ 
+    "blueprints/*/files/**",
+    "tmp",
+    "dist"
+  ]
 }
