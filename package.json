@@ -17,7 +17,7 @@
     "@types/debug": "^0.0.29",
     "@types/glob": "^5.0.30",
     "bluebird": "^3.4.6",
-    "broccoli-typescript-compiler": "davewasmer/broccoli-typescript-compiler#master",
+    "broccoli-typescript-compiler": "^2.0.1",
     "debug": "^2.6.8",
     "denali": "^0.0.27",
     "denali-cli": "^0.0.12",
