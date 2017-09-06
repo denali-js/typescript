@@ -11,7 +11,7 @@
     "addon"
   ],
   "main": "lib/index.js",
-  "mainDir": "dist/lib/index.js",
+  "mainDir": "dist",
   "typings": "dist/lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
