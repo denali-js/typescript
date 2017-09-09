@@ -10,7 +10,6 @@
       "importHelpers": true,
       "inlineSourceMap": true,
       "inlineSources": true,
-      "baseUrl": ".",
       "skipLibCheck": true
   },
   "exclude": [ "blueprints/*/files/**" ]

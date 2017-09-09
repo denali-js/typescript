@@ -16,8 +16,11 @@ module.exports = class DenaliBuilder extends Builder {
   }
 
   transpileTree(tree, dir) {
+    let tsconfig = require(path.join(dir, 'tsconfig.json'));
+    tsconfig.baseUrl = dir;
     let transpiledTS = new Typescript(tree, {
-      tsconfig: require(path.join(dir, 'tsconfig.json')),
+      tsconfig, 
+      workingPath: dir,
       annotation: 'compile typescript'
     });
     transpiledTS.setDiagnosticWriter((message) => {
