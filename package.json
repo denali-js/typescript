@@ -19,6 +19,7 @@
     "@types/glob": "^5.0.32",
     "bluebird": "^3.4.6",
     "broccoli-typescript-compiler": "^2.1.0",
+    "chalk": "^2.1.0",
     "debug": "^3.0.1",
     "denali": "^0.0.32",
     "denali-cli": "^0.0.14",
