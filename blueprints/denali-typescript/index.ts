@@ -14,8 +14,7 @@ export default class DenaliTypescriptBlueprint extends Blueprint {
     [
       '.babelrc',
       '.eslintignore',
-      '.eslintrc',
-      'test/.eslintrc'
+      '.eslintrc'
     ].forEach((filepath) => {
       try {
         unlinkSync(filepath);
@@ -30,26 +29,12 @@ export default class DenaliTypescriptBlueprint extends Blueprint {
     ui.info('Removing babel and eslint specific packages ...');
     this.uninstallPackages([
       'babel-eslint',
-      'babel-preset-es2015',
-      'babel-register',
-      'babel-plugin-syntax-async-functions',
-      'babel-plugin-syntax-trailing-function-commas',
-      'babel-plugin-transform-async-to-generator',
+      'babel-preset-env',
       'babel-plugin-transform-class-properties',
-      'babel-plugin-transform-es2015-destructuring',
-      'babel-plugin-transform-es2015-modules-commonjs',
-      'babel-plugin-transform-es2015-shorthand-properties',
-      'babel-plugin-transform-es2015-spread',
-      'babel-plugin-transform-es2015-template-literals',
-      'babel-plugin-transform-exponentiation-operator',
-      'babel-plugin-transform-regenerator',
-      'babel-plugin-transform-runtime',
       'denali-babel',
-      'denali-eslint',
-      'eslint',
-      'eslint-config-denali'
+      'denali-eslint'
     ]);
-    ui.info('installing typescript and tslint ...');
+    ui.info('Installing typescript and tslint ...');
     this.installPackages([ 'typescript', 'tslint' ]);
   }
 }

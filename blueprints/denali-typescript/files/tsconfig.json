@@ -3,19 +3,26 @@
   "compilerOptions": {
       "module": "commonjs",
       "moduleResolution": "node",
-      "target": "ES2016",
+      "target": "ES2017",
       "noImplicitAny": true,
       "sourceMap": false,
       "importHelpers": true,
       "inlineSourceMap": true,
       "inlineSources": true,
-      "baseUrl": ".",
+      "outDir": "dist",
       "skipLibCheck": true,
-      "sourceRoot": "."
+      "sourceRoot": ".",
+      "noUnusedLocals": true,
+      "baseUrl": "."
   },
-  "exclude": [ 
-    "blueprints/*/files/**",
-    "tmp",
-    "dist"
-  ]
+  "include": [
+    "lib/**/*",
+    "app/**/*",
+    "blueprints/*/index.ts",
+    "commands/**/*",
+    "config/**/*",
+    "test/**/*"
+  ],
+  "exclude": [ "blueprints/*/files/**" ]
 }
+

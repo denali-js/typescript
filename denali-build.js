@@ -1,11 +1,11 @@
 const path = require('path');
 const chalk = require('chalk');
-const { Builder, ui } = require(`denali-cli`);
+const { AddonBuilder, ui } = require(`denali-cli`);
 const Funnel = require('broccoli-funnel');
 const MergeTree = require('broccoli-merge-trees');
 const { typescript: Typescript } = require('broccoli-typescript-compiler');
 
-module.exports = class DenaliBuilder extends Builder {
+module.exports = class DenaliTypescriptBuilder extends AddonBuilder {
 
   processSelf(tree, dir) {
     return this.transpileTree(tree, dir);
@@ -19,7 +19,7 @@ module.exports = class DenaliBuilder extends Builder {
     let tsconfig = require(path.join(dir, 'tsconfig.json'));
     tsconfig.baseUrl = dir;
     let transpiledTS = new Typescript(tree, {
-      tsconfig, 
+      tsconfig,
       workingPath: dir,
       annotation: 'compile typescript'
     });
