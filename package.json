@@ -10,8 +10,13 @@
     "denali-addon",
     "addon"
   ],
-  "main": "lib/index.js",
-  "mainDir": "dist",
+  "files": [
+    "dist",
+    "denali-build.js",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "main": "dist/lib/index.js",
   "typings": "dist/lib/index.d.ts",
   "license": "MIT",
   "dependencies": {
@@ -29,7 +34,7 @@
     "returnof": "^1.1.1"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
+    "ava": "^0.25.0",
     "standard-version": "^4.2.0"
   },
   "ava": {
