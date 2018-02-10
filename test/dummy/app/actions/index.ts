@@ -1,6 +1,6 @@
 import ApplicationAction from './application';
 
-export default class IndexAction extends ApplicationAction {
+export default class indexAction extends ApplicationAction {
 
   serializer = false;
 
