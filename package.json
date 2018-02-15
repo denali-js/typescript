@@ -1,6 +1,6 @@
 {
   "name": "denali-typescript",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "scripts": {
     "build": "denali build",
     "prepublishOnly": "npm run build",
