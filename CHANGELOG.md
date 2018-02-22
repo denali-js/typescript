@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/denali-js/typescript/compare/v0.0.11...v0.1.1) (2018-02-22)
+
+
+
 <a name="0.0.11"></a>
 ## [0.0.11](https://github.com/denali-js/denali-typescript/compare/v0.0.10...v0.0.11) (2018-02-15)
 
