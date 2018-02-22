@@ -1,6 +1,6 @@
 const path = require('path');
 const chalk = require('chalk');
-const { AddonBuilder, ui } = require(`denali-cli`);
+const { AddonBuilder, ui } = require(`@denali-js/cli`);
 const Funnel = require('broccoli-funnel');
 const MergeTree = require('broccoli-merge-trees');
 const { typescript: Typescript } = require('broccoli-typescript-compiler');

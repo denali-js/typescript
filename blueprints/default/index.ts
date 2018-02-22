@@ -1,12 +1,12 @@
 import { unlinkSync, renameSync } from 'fs';
 import * as glob from 'glob';
-import { Blueprint, ui } from 'denali-cli';
+import { Blueprint, ui } from '@denali-js/cli';
 import * as createDebug from 'debug';
 
-const debug = createDebug('denali-typescript');
+const debug = createDebug('@denali-js/typescript');
 
 export default class DenaliTypescriptBlueprint extends Blueprint {
-  static blueprintName = 'denali-typescript';
+  static blueprintName = 'default';
   static description = 'Installs denali-typescript';
 
   async postInstall() {

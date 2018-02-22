@@ -1,4 +1,4 @@
-import { MixinApplicator, MixinFactory } from 'denali';
+import { MixinApplicator, MixinFactory } from '@denali-js/core';
 
 export interface Mixable<T> {
     add<U extends T>(Mixin: MixinApplicator<T, U>): U & Mixable<U>;

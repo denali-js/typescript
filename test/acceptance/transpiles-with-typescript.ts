@@ -1,7 +1,7 @@
 import test from 'ava';
 import * as fs from 'fs';
 import * as path from 'path';
-import { CommandAcceptanceTest } from 'denali-cli';
+import { CommandAcceptanceTest } from '@denali-js/cli';
 
 test('transpiles source with typescript', async (t) => {
   let build = new CommandAcceptanceTest('build', { name: 'build-command' });

@@ -1,11 +1,11 @@
-# denali-typescript
+# @denali-js/typescript
 
-[![CircleCI](https://img.shields.io/circleci/project/github/denali-js/denali-typescript.svg?style=flat-square)](https://circleci.com/gh/denali-js/denali-typescript)
-[![Dependencies](https://img.shields.io/david/denali-js/denali-typescript.svg?style=flat-square)](https://david-dm.org/denali-js/denali-typescript)
-[![npm downloads](https://img.shields.io/npm/dm/denali-typescript.svg?style=flat-square)](https://www.npmjs.com/package/denali-typescript)
-![latest version](https://img.shields.io/npm/v/denali-typescript.svg?style=flat-square)
+[![CircleCI](https://img.shields.io/circleci/project/github/@denali-js/typescript.svg?style=flat-square)](https://circleci.com/gh/@denali-js/typescript)
+[![Dependencies](https://img.shields.io/david/@denali-js/typescript.svg?style=flat-square)](https://david-dm.org/@denali-js/typescript)
+[![npm downloads](https://img.shields.io/npm/dm/@denali-js/typescript.svg?style=flat-square)](https://www.npmjs.com/package/@denali-js/typescript)
+![latest version](https://img.shields.io/npm/v/@denali-js/typescript.svg?style=flat-square)
 
-Build your Denali app using Typescript! Just `$ denali install denali-typescript`
+Build your Denali app using Typescript! Just `$ denali install @denali-js/typescript`
 and you're good to go!
 
 
