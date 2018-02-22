@@ -17,7 +17,7 @@
   ],
   "main": "dist/lib/index.js",
   "typings": "dist/lib/index.d.ts",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": "denali-js/typescript",
   "dependencies": {
     "@types/debug": "^0.0.30",
